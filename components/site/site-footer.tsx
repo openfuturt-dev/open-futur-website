@@ -45,8 +45,8 @@ export function SiteFooter() {
           <FooterLink href="https://www.linkedin.com" external>
             LinkedIn
           </FooterLink>
-          <FooterLink href="https://github.com" external>
-            GitHub
+          <FooterLink href="https://www.instagram.com" external>
+            Instagram
           </FooterLink>
           <FooterLink href="https://x.com" external>
             X / Twitter

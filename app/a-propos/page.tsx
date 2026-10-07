@@ -37,7 +37,7 @@ export default function AboutPage() {
           <SectionHeading id="story-title" eyebrow="Notre histoire" title="Ouvrir une porte vers le futur de chaque entreprise." />
           <div className="mt-6 flex flex-col gap-4 leading-relaxed text-muted-foreground">
             <p>
-              Fondée en 2018 à Marrakech, Open Futur est née d’un constat simple : trop d’entreprises subissent leurs
+              Fondée en 2026 à Marrakech, Open Futur est née d’un constat simple : trop d’entreprises subissent leurs
               outils numériques au lieu d’en tirer parti.
             </p>
             <p>

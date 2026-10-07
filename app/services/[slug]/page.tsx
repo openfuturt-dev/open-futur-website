@@ -63,13 +63,6 @@ export default async function ServiceDetailPage({ params }: Props) {
               title="Des opérations plus simples, un impact plus fort."
               description={service.short}
             />
-            <div className="mt-8 flex flex-wrap gap-2">
-              {service.stack.map((t) => (
-                <span key={t} className="rounded-full border border-border px-3.5 py-1.5 text-sm font-medium text-muted-foreground">
-                  {t}
-                </span>
-              ))}
-            </div>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {service.benefits.map((b) => (
