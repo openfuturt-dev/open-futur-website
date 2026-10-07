@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Manrope', 'Manrope Fallback', ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-teal: var(--teal);
+  --color-cyan: var(--cyan);
+  --color-cyan-glow: var(--cyan-glow);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.25);
+  --radius-2xl: calc(var(--radius) * 1.5);
+  --radius-3xl: calc(var(--radius) * 2);
+}
+
+/* Charte Open Futur */
+:root {
+  color-scheme: light;
+  --navy: #081b2c;
+  --navy-deep: #102331;
+  --teal: #13a8b8;
+  --cyan: #42ced3;
+  --cyan-glow: #37e4ee;
+
+  --background: #ffffff;
+  --foreground: #10202b;
+  --card: #ffffff;
+  --card-foreground: #10202b;
+  --popover: #ffffff;
+  --popover-foreground: #10202b;
+  --primary: #13a8b8;
+  --primary-foreground: #ffffff;
+  --secondary: #f6f9fa;
+  --secondary-foreground: #10202b;
+  --muted: #f6f9fa;
+  --muted-foreground: #647481;
+  --accent: #e3f7f8;
+  --accent-foreground: #0d7f8b;
+  --destructive: #d64545;
+  --border: #e3eaee;
+  --input: #dbe4e9;
+  --ring: #13a8b8;
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    background: var(--cyan-glow);
+    color: var(--navy);
+  }
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(90deg, var(--teal), var(--cyan) 45%, var(--cyan-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-grid-navy {
+  background-image:
+    linear-gradient(to right, rgb(66 206 211 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(66 206 211 / 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-rise {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
