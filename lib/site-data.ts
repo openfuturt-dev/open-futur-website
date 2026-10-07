@@ -25,6 +25,7 @@ export const mainNav = [
   { label: 'Notre méthode', href: '/methode' },
   { label: 'Insights', href: '/insights' },
   { label: 'À propos', href: '/a-propos' },
+  { label: 'Équipe', href: '/equipe' },
 ]
 
 export type Service = {
@@ -36,7 +37,6 @@ export type Service = {
   image: string
   benefits: string[]
   useCases: { title: string; text: string }[]
-  stack: string[]
   faqs: { q: string; a: string }[]
 }
 
@@ -60,7 +60,6 @@ export const services: Service[] = [
       { title: 'Plateforme e-commerce', text: 'Un parcours d’achat fluide, connecté à vos stocks et paiements.' },
       { title: 'Portail client', text: 'Un espace sécurisé pour vos clients : suivi, documents, échanges.' },
     ],
-    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     faqs: [
       { q: 'Combien de temps faut-il pour lancer un site ?', a: 'Un site vitrine est généralement livré en 4 à 6 semaines. Une application web sur mesure se planifie par itérations, avec une première version utilisable rapidement.' },
       { q: 'Pourrons-nous modifier le contenu nous-mêmes ?', a: 'Oui. Nous intégrons un outil de gestion de contenu adapté à vos équipes et nous vous formons à son utilisation.' },
@@ -86,7 +85,6 @@ export const services: Service[] = [
       { title: 'CRM sur mesure', text: 'Un pipeline commercial adapté à votre cycle de vente.' },
       { title: 'Outil de pilotage', text: 'Des indicateurs clés consolidés pour décider plus vite.' },
     ],
-    stack: ['TypeScript', 'Node.js', 'PostgreSQL', 'Next.js', 'Docker'],
     faqs: [
       { q: 'Pourquoi un logiciel sur mesure plutôt qu’une solution existante ?', a: 'Un outil sur mesure s’adapte à vos processus plutôt que l’inverse. Il élimine les contournements et les licences inutiles, et évolue avec votre entreprise.' },
       { q: 'Nos données existantes peuvent-elles être reprises ?', a: 'Oui. Nous planifions la migration de vos données dès la phase de cadrage pour assurer une transition sans rupture.' },
@@ -112,7 +110,6 @@ export const services: Service[] = [
       { title: 'Synchronisation de données', text: 'Vos outils restent alignés automatiquement, sans double saisie.' },
       { title: 'Workflows personnalisés', text: 'Des enchaînements conçus pour vos règles métier.' },
     ],
-    stack: ['Workflows durables', 'Webhooks', 'IA générative', 'Cron', 'APIs REST'],
     faqs: [
       { q: 'Par où commencer l’automatisation ?', a: 'Nous commençons par un audit court de vos processus pour identifier les automatisations au meilleur retour sur investissement.' },
       { q: 'Utilisez-vous l’intelligence artificielle ?', a: 'Quand elle apporte une vraie valeur — classification, extraction de documents, rédaction assistée — oui, toujours avec un contrôle humain sur les décisions sensibles.' },
@@ -138,7 +135,6 @@ export const services: Service[] = [
       { title: 'Paiements en ligne', text: 'Intégration de passerelles de paiement fiables et conformes.' },
       { title: 'API partenaires', text: 'Ouvrez vos données à vos partenaires en toute sécurité.' },
     ],
-    stack: ['REST', 'GraphQL', 'OAuth 2.0', 'Webhooks', 'OpenAPI'],
     faqs: [
       { q: 'Pouvez-vous intégrer un outil sans API publique ?', a: 'Souvent, oui : via des exports planifiés, des connecteurs dédiés ou des solutions intermédiaires. Nous évaluons la meilleure approche au cas par cas.' },
       { q: 'Comment garantissez-vous la sécurité des échanges ?', a: 'Authentification forte, chiffrement, gestion des secrets et journalisation font partie de chaque intégration.' },
@@ -164,7 +160,6 @@ export const services: Service[] = [
       { title: 'CI/CD', text: 'Chaque modification testée et déployée automatiquement.' },
       { title: 'Observabilité', text: 'Logs, métriques et alertes pour anticiper les incidents.' },
     ],
-    stack: ['Vercel', 'AWS', 'Docker', 'GitHub Actions', 'Terraform'],
     faqs: [
       { q: 'Quel fournisseur cloud recommandez-vous ?', a: 'Celui qui correspond à vos contraintes de coûts, de conformité et de localisation des données. Nous restons indépendants des fournisseurs.' },
       { q: 'Pouvez-vous reprendre une infrastructure existante ?', a: 'Oui. Nous commençons par un audit pour sécuriser et optimiser l’existant avant toute évolution.' },
@@ -190,7 +185,6 @@ export const services: Service[] = [
       { title: 'Nouveau produit', text: 'Du concept au prototype testé en quelques semaines.' },
       { title: 'Design system', text: 'Une bibliothèque de composants partagée par designers et développeurs.' },
     ],
-    stack: ['Figma', 'Prototypage', 'Tests utilisateurs', 'Design tokens', 'Accessibilité'],
     faqs: [
       { q: 'Travaillez-vous avec notre charte graphique existante ?', a: 'Bien sûr. Nous la prolongeons dans un design system numérique complet et cohérent.' },
       { q: 'Testez-vous les maquettes avec de vrais utilisateurs ?', a: 'Oui, des sessions de tests courtes permettent de valider les choix avant d’investir dans le développement.' },
@@ -213,8 +207,48 @@ export const processSteps = [
   { title: 'Faire grandir', text: 'Nous assurons le suivi, l’optimisation et les évolutions continues.' },
 ]
 
+export type TeamMember = {
+  name: string
+  role: string
+  bio: string
+  image: string
+}
+
+export const team: TeamMember[] = [
+  {
+    name: 'Prénom Nom',
+    role: 'Fondateur & Directeur technique',
+    bio: 'Pilote la vision produit et l’architecture technique de chaque projet, de la stratégie à la mise en production.',
+    image: '/images/team.png',
+  },
+  {
+    name: 'Prénom Nom',
+    role: 'Cheffe de projet',
+    bio: 'Coordonne les équipes et les clients pour livrer chaque projet dans les délais, avec clarté à chaque étape.',
+    image: '/images/team.png',
+  },
+  {
+    name: 'Prénom Nom',
+    role: 'Ingénieur logiciel',
+    bio: 'Conçoit et développe des applications robustes, performantes et prêtes à évoluer avec votre activité.',
+    image: '/images/team.png',
+  },
+  {
+    name: 'Prénom Nom',
+    role: 'Designer UI/UX',
+    bio: 'Transforme les besoins utilisateurs en interfaces claires, cohérentes et agréables à utiliser.',
+    image: '/images/team.png',
+  },
+  {
+    name: 'Prénom Nom',
+    role: 'Experte cloud & infrastructure',
+    bio: 'Déploie et supervise des infrastructures fiables, sécurisées et dimensionnées pour la croissance.',
+    image: '/images/team.png',
+  },
+]
+
 export const stats = [
-  { value: '2018', label: 'Année de création' },
+  { value: '2026', label: 'Année de création' },
   { value: '100+', label: 'Projets livrés' },
   { value: '30+', label: 'Clients accompagnés' },
   { value: '4.9/5', label: 'Satisfaction client' },
