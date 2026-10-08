@@ -18,6 +18,7 @@ node_modules
 
 .vercel
 .env*
+!.env.example
 
 # Local throwaway sqlite file used only to author Prisma migrations
 dev.db
