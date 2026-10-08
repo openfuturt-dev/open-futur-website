@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import { ArrowRight, CircleCheck, LoaderCircle } from "lucide-react";
-import { submitContact, type ContactState } from "@/app/contact/actions";
+import { submitContact, type ContactState } from "@/app/(site)/contact/actions";
 import { brandButton } from "@/components/ui/button-link";
 import { services } from "@/lib/site-data";
 import { cn } from "@/lib/utils";

@@ -5,27 +5,30 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import { PostCard } from '@/components/site/post-card'
 import { CtaBanner } from '@/components/site/cta-banner'
-import { formatDate, posts } from '@/lib/site-data'
+import { formatDate } from '@/lib/site-data'
+import { getPublishedPostBySlug, getPublishedPosts } from '@/lib/posts'
 
 type Props = { params: Promise<{ slug: string }> }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const posts = await getPublishedPosts()
   return posts.map((p) => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = posts.find((p) => p.slug === slug)
+  const post = await getPublishedPostBySlug(slug)
   if (!post) return {}
   return { title: post.title, description: post.excerpt, openGraph: { type: 'article', publishedTime: post.date } }
 }
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params
-  const post = posts.find((p) => p.slug === slug)
+  const post = await getPublishedPostBySlug(slug)
   if (!post) notFound()
 
-  const related = posts.filter((p) => p.slug !== slug).slice(0, 3)
+  const allPosts = await getPublishedPosts()
+  const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3)
 
   return (
     <>

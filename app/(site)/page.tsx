@@ -7,9 +7,11 @@ import { ProcessTimeline } from '@/components/site/process-timeline'
 import { PostCard } from '@/components/site/post-card'
 import { CtaBanner } from '@/components/site/cta-banner'
 import { ButtonLink } from '@/components/ui/button-link'
-import { posts } from '@/lib/site-data'
+import { getPublishedPosts } from '@/lib/posts'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await getPublishedPosts()
+
   return (
     <>
       <HomeHero />

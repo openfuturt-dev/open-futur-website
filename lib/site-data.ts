@@ -16,7 +16,7 @@ export const site = {
     'Open Futur conçoit et développe des produits numériques pensés pour simplifier le travail, accélérer la croissance et créer de nouvelles possibilités.',
   email: 'contact@open-futur.com',
   city: 'Marrakech, Maroc',
-  url: 'https://open-futur.com',
+  url: 'https://open-futur.vercel.app',
 }
 
 export const mainNav = [

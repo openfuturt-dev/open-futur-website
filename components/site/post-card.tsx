@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { formatDate, type Post } from '@/lib/site-data'
+import { formatDate } from '@/lib/site-data'
+import type { PublicPost } from '@/lib/posts'
 
-export function PostCard({ post }: { post: Post }) {
+export function PostCard({ post }: { post: PublicPost }) {
   return (
     <article className="group flex flex-col">
       <Link href={`/insights/${post.slug}`} className="flex flex-col gap-4">

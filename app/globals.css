@@ -100,6 +100,10 @@
   background-size: 56px 56px;
 }
 
+@utility input {
+  @apply w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-primary;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
